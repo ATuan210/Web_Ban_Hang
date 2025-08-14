@@ -1,0 +1,50 @@
+﻿@*@model IEnumerable<LapTrinhWeb.Models.Product>*@
+@using LapTrinhWeb.Models;
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<LapTrinhWeb.Models.Product>
+@{
+    ViewBag.Title = "Product Index";
+}
+
+<section class="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                @Html.Partial("_Categories")
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title"><i class="fa-solid fa-paw"></i> Tất cả sản phẩm <i class="fa-solid fa-paw"></i></h2>
+                    <hr />
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="~/img/pet/@item.ProImage" alt="">
+                                            <a href="@Url.Action("Details", "Product",  new { id = item.ProId })"><strong class="proname_product">@item.ProName</strong></a><br />                                            <h2>@item.ProPrice đ</h2>
+                                            <button class="button_product" type="button">
+                                                @Html.ActionLink("Thêm vào giỏ hàng", "OrderNow", "ShoppingCart", new { Id = item.ProId }, null)
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    
+</section>

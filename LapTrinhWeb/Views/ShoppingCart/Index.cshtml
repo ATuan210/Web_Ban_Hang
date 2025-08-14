@@ -1,0 +1,92 @@
+﻿@using LapTrinhWeb.Models
+@{
+    ViewBag.Title = "Shopping Cart";
+
+
+}
+<section class="shopping_cart">
+    <h2 class="shopping_cart_title" style="text-align: center; font-family: Arial; font-weight: bolder; margin-top: 35px;"><i class="fa-solid fa-bag-shopping"></i> Giỏ Hàng <i class="fa-solid fa-bag-shopping"></i></h2>
+    @{
+        if (Session["Cart"] != null)
+        {
+            using (Html.BeginForm("UpdateCart", "ShoppingCart", FormMethod.Post))
+            {
+                <table class="table" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; ">
+                    <tr style="font-weight: bolder; font-family: Arial; font-size: 16px;">
+                        <td>Tên sản phẩm</td>
+                        <td>Số lượng</td>
+                        <td>Đơn giá</td>
+                        <td>Tổng giá</td>
+                        <td>Hoạt động</td>
+                    </tr>
+
+                    @foreach (var cart in (List<Cart>)Session["Cart"])
+                    {
+                        double p = Convert.ToDouble(cart.Product.ProPrice);
+                        int q = Convert.ToInt32(cart.Quantity);
+                        double subtotal = p * q;
+                        <tr style="font-family: Arial; font-size: 15px; font-weight: 500;">
+                            <td>@cart.Product.ProName</td>
+                            <td>
+                                <input type="number" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '');" style="appearance: none; -moz-appearance: textfield; border: none; outline: none;" name="quantity" class="quantity" value="@cart.Quantity" />
+                            </td>
+                            <td>@string.Format("{0:#,##0} ₫", cart.Product.ProPrice)</td>
+                            <td>@string.Format("{0:#,##0} ₫", subtotal)</td>
+
+                            <td>
+                                <a href="@Url.Action("RemoveItem", "ShoppingCart", new { Id = cart.Product.ProId })"
+                                   onclick="return confirm('Bạn đã chắc chắn muốn xóa không ?');"
+                                   style="text-decoration: none;">
+                                    Xóa <i class="fa-solid fa-trash" style="margin-left: 5px;"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+
+                    <tr>
+                        @{
+                            List<Cart> temp = (List<Cart>)Session["Cart"];
+                            var total = temp.Sum(x => x.Quantity * x.Product.ProPrice);
+                        }
+                        <td colspan="2"></td>
+                        <td align="right" style="font-weight: 700; font-family: Arial;">Tổng Tiền: </td>
+                        <td colspan="2" style="font-family: Arial; font-size: 15px; font-weight: 700;">
+                            @string.Format("{0:#,##0} ₫", total)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bolder; font-size: 20px;">
+                            <i class="fa-solid fa-backward"></i>
+                            @Html.ActionLink("Tiếp tục mua sắm", "Index", "Product")
+                        </td>
+                        <td style="font-weight: bolder; font-size: 18px;">@Html.ActionLink("Xóa tất cả", "ClearCart", "ShoppingCart", new { @style = "text-decoration: underline;" })</td>
+                        <td style="font-size: 18px;">
+                            <input style="font-weight: bolder; border-radius: 8px; background-color: #ffcc99;" type="submit" value="Cập nhật đơn hàng" /><br />
+                            <span id="errmsg" style="color: red"></span>
+                        </td>
+                        <td></td>
+                        <td style="font-weight: bolder; font-size: 20px;">@Html.ActionLink("Thanh toán", "CheckOut", "ShoppingCart", new { @style = "text-decoration: underline;" }) <i class="fa-solid fa-wallet" style="margin-left: 5px;"></i></td>
+                    </tr>
+                </table>
+            }
+        }
+        else
+        {
+            <h4 style="margin-bottom : 133px; text-align:center; font-family: Arial; font-weight: bolder;">Không có sản phẩm trong giỏ hàng !!!</h4>
+            <img src="~/img/GioiThieu/giohangtrong.png" alt="ảnh giỏ hàng trống" style="width: 40%; margin-left: 450px;"/>
+        }
+    }
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="path/to/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".quantity").keypress(function (e) {
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    $("#errmsg").html("Enter digits only !").show().fadeOut("slow");
+                    return false;
+                }
+            });
+        });
+    </script>
+</section>
+

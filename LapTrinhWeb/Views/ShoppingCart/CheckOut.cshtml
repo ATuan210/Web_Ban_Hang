@@ -1,0 +1,108 @@
+﻿@using LapTrinhWeb.Models
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+
+<h2 style="text-align: center; margin: 20px 0px 30px 0px;">Thanh Toán Hóa Đơn</h2>
+
+@if (Session["cart"] != null)
+{
+    <table class="table" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; ">
+        <tr style="font-weight: bolder; font-family: Arial; font-size: 16px;">
+            <td>Tên sản phẩm</td>
+            <td>Số lượng</td>
+            <td>Đơn giá</td>
+            <td>Tổng phụ</td>
+        </tr>
+        @foreach (var cart in (List<Cart>)Session["cart"])
+        {
+            double p = Convert.ToDouble(cart.Product.ProPrice);
+            int q = Convert.ToInt32(cart.Quantity);
+            double subtotal = p * q;
+
+            <tr style="font-family: Arial; font-size: 15px; font-weight: 500;">
+                <td>@cart.Product.ProName</td>
+                <td>@cart.Quantity</td>
+                <td>@string.Format("{0:#,##0} ₫", cart.Product.ProPrice)</td>
+                <td>@string.Format("{0:#,##0} ₫", subtotal)</td>
+            </tr>
+        }
+    <tr>
+        @{
+            List<Cart> temp = (List<Cart>)Session["cart"];
+            var total = temp.Sum(x => x.Quantity * x.Product.ProPrice);
+        }
+        <td colspan="2">
+            &nbsp;
+        </td>
+        <td align="right" style="font-weight: 700; font-family: Arial; font-size: 22px;">Tổng Tiền: </td>
+        <td colspan="2" style="font-family: Arial; font-size: 22px; font-weight: 700;">
+            @string.Format("{0:#,##0} ₫", total)
+        </td>
+    </tr>
+    </table>
+}
+else
+{
+    <h4>No items in your cart!</h4>
+}
+
+<h3>Thông tin khách hàng</h3>
+@using (Html.BeginForm("ProcessOrder", "ShoppingCart", FormMethod.Post, new { id = "customer-form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2">Customer's Name</label>
+            <div class="col-md-10">
+                <input type="text" name="cusName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Customer's Phone</label>
+            <div class="col-md-10">
+                <input type="text" name="cusPhone" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Customer's Email</label>
+            <div class="col-md-10">
+                <input type="text" name="cusEmail" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Customer's Address</label>
+            <div class="col-md-10">
+                <input type="text" name="cusAddress" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Process Order" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="/path/to/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+    $("#customer-form").validate({
+        rules: {
+            cusName: {
+                required: true
+            },
+            cusPhone: {
+                required: true
+            },
+            cusEmail: {
+                required: true
+            },
+            cusAddress: {
+                required: true
+            }
+        }
+    });
+</script>

@@ -1,0 +1,42 @@
+﻿@model LapTrinhWeb.Models.Product
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="product_details">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                @Html.Partial("_Categories")
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <h2 class="text-center">Chi Tiết Thú Cưng</h2>
+                <div class="container" style="width: 100%">
+                    <div class="row">
+                        <div class="col-sm-4"><img src="~/img/pet/@Model.ProImage" class="img-thumbnail" style="width: 100%;" alt="Image" /></div>
+                        <div class="col-sm-8">
+                            <h4 class="text-uppercase">@Model.ProName</h4>
+                            <br />
+                            <h4><strong>$@Model.ProPrice </strong></h4>
+                            <hr />
+                            <p>Giống : <span>@Model.ProBreed</span></p>
+                            <p>Màu : <span>@Model.ProColor</span></p>
+                            <p>Tuổi : <span>@Model.ProAge</span></p>
+                            <p>Giới tính : <span>@Model.ProGender</span></p>
+                            <p>Tiêm phòng : <span>@Model.ProVaccination</span></p>
+                            <p>Tẩy giun : <span>@Model.ProDeworming</span></p>
+                            <p>Sức khỏe: <span>@Model.ProHealth</span></p>
+                            <p>Vận chuyển : <span>@Model.ProShipping</span></p>
+                            <p>Tình trạng : <span>@Model.Status</span></p>
+                            <p>Nguồn gốc : <span>@Model.Origin</span></p>
+                            <button type="button">@Html.ActionLink("Thêm vào giỏ hàng", "OrderNow", "ShoppingCart", new { Id = Model.ProId }, null)</button>
+                            <p class="back_product"><i class="fa-solid fa-backward"></i>@Html.ActionLink("Back to Products", "Index")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,2439 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700|Poppins:200,300,400,500,500i,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700|Poppins:200,300,400,500,500i,600,700,800&display=swap");
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_extend.scss */
+.flex-center-start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+/* line 22, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_extend.scss */
+.header-area .main-header-area.sticky {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#a64eee+0,3c35ce+100 */
+  background: #a64eee;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #a64eee 0%, #3c35ce 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #a64eee 0%, #3c35ce 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #a64eee 0%, #3c35ce 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a64eee', endColorstr='#3c35ce',GradientType=1 );
+  /* IE6-9 */
+}
+
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
+/* 1. Theme default css */
+/* line 4, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+body {
+    font-family: "Crimson Text", serif;
+    font-weight: normal;
+    font-style: normal;
+    height: 100%;
+}
+
+.pagination {
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+
+    .pagination li:first-child a,
+    .pagination li:first-child span {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        margin-left: 0;
+    }
+
+    .pagination li:last-child a,
+    .pagination li:last-child span {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .pagination .active a,
+    .pagination .active span,
+    .pagination .active a:hover,
+    .pagination .active span:hover,
+    .pagination .active a:focus,
+    .pagination .active span:focus {
+        background-color: #ffcc99;
+        border-color: #ffcc99;
+        color: #FFFFFF;
+        cursor: default;
+        z-index: 2;
+    }
+
+    .pagination li a,
+    .pagination li span {
+        background-color: #ffcc99;
+        border: 0;
+        float: left;
+        line-height: 1.42857;
+        margin-left: -1px;
+        padding: 6px 12px;
+        position: relative;
+        text-decoration: none;
+        margin-right: 5px;
+        color: #000;
+    }
+
+        .pagination li a:hover {
+            background: #ffcc99;
+            color: #fff;
+        }
+
+/* line 11, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.img {
+  max-width: 100%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 15, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+a,
+.button {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 19, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+a:focus,
+.button:focus, button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 24, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+a:focus {
+  text-decoration: none;
+}
+
+/* line 27, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer -menu li a:hover {
+  text-decoration: none;
+}
+
+/* line 33, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+a,
+button {
+  color: #1F1F1F;
+  outline: medium none;
+}
+
+/* line 38, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+h1, h2, h3, h4, h5 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* line 42, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+
+
+/* line 51, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 55, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+li {
+  list-style: none;
+}
+
+
+/* line 73, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+*::-moz-selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 78, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+::-moz-selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 83, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+::selection {
+  background: #444;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 88, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+*::-webkit-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 93, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+*:-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 98, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+*::-ms-input-placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+/* line 103, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+*::placeholder {
+  color: #cccccc;
+  font-size: 14px;
+  opacity: 1;
+}
+
+
+
+/* line 113, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.mb-65 {
+  margin-bottom: 67px;
+}
+
+/* line 117, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.black-bg {
+  background: #020c26 !important;
+}
+
+/* line 121, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.white-bg {
+  background: #ffffff;
+}
+
+/* line 124, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.gray-bg {
+  background: #f5f5f5;
+}
+
+/* line 129, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.bg-img-1 {
+  background-image: url(../img/slider/slider-img-1.jpg);
+}
+
+/* line 132, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.bg-img-2 {
+  background-image: url(../img/background-img/bg-img-2.jpg);
+}
+
+/* line 135, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.cta-bg-1 {
+  background-image: url(../img/background-img/bg-img-3.jpg);
+}
+
+/* line 140, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.overlay {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 144, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.overlay::before {
+  position: absolute;
+  content: "";
+  background-color: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: .5;
+}
+
+/* line 156, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.overlay2 {
+  position: relative;
+  z-index: 0;
+}
+
+/* line 160, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.overlay2::before {
+  position: absolute;
+  content: "";
+  background-color: #2E004B;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* line 172, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* line 176, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.pt-120 {
+  padding-top: 120px;
+}
+
+/* button style */
+/* line 182, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.owl-carousel .owl-nav div {
+  background: transparent;
+  height: 54px;
+  left: 150px;
+  line-height: 54px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  width: 54px;
+  font-size: 25px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  left: 50px;
+  font-size: 18px;
+  line-height: 54px;
+  font-size: 20px;
+  line-height: 54px;
+  color: #fff;
+  left: 150px;
+}
+
+/* line 213, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.owl-carousel .owl-nav div.owl-next {
+  left: auto;
+  right: 150px;
+}
+
+/* line 218, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.owl-carousel .owl-nav div.owl-next i {
+  position: relative;
+  right: 0;
+  top: 1px;
+}
+
+/* line 225, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.owl-carousel .owl-nav div.owl-prev i {
+  position: relative;
+  right: 1px;
+  top: 0px;
+}
+
+/* line 235, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.owl-carousel:hover .owl-nav div {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* line 238, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.owl-carousel:hover .owl-nav div:hover {
+  color: #fff;
+  background: #1F1F1F;
+}
+
+/* line 247, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.mb-20px {
+  margin-bottom: 20px;
+}
+
+/* line 250, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+.mb-90 {
+  margin-bottom: 90px;
+}
+
+@media (max-width: 767px) {
+  /* line 250, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+  .mb-90 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 250, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_reset.scss */
+  .mb-90 {
+    margin-bottom: 45px;
+  }
+}
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn {
+  background: #fff;
+  color: #04D2C8;
+  display: inline-block;
+  padding: 18px 44px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #04D2C8;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #04D2C8 !important;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* line 17, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn:hover {
+  background: #04D2C8;
+  color: #fff !important;
+  border: 1px solid #04D2C8;
+}
+
+/* line 22, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn:focus {
+  outline: none;
+}
+
+/* line 25, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn.large-width {
+  width: 220px;
+}
+
+/* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn3 {
+  background: #1F1F1F;
+  color: #fff;
+  display: inline-block;
+  padding: 12px 27px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #1F1F1F;
+  text-align: center;
+  color: #fff !important;
+  text-transform: capitalize;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* line 45, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn3:hover {
+  background: #fff;
+  color: #1F1F1F !important;
+  border: 1px solid #1F1F1F;
+}
+
+/* line 50, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn3:focus {
+  outline: none;
+}
+
+/* line 53, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn3.large-width {
+  width: 220px;
+}
+
+/* line 57, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn2 {
+  background: transparent;
+  color: #fff;
+  display: inline-block;
+  padding: 18px 24px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  border: 0;
+  border: 1px solid #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* line 69, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn2:hover {
+  background: #fff;
+  color: #131313 !important;
+}
+
+/* line 73, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed-btn2:focus {
+  outline: none;
+}
+
+/* line 77, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.line-button {
+  color: #919191;
+  font-size: 16px;
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+  padding-right: 5px;
+  padding-bottom: 2px;
+}
+
+/* line 85, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.line-button::before {
+  position: absolute;
+  content: "";
+  background: #919191;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 94, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.line-button:hover {
+  color: #009DFF;
+}
+
+/* line 97, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.line-button:hover::before {
+  background: #009DFF;
+}
+
+/* line 101, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.book_now {
+  display: inline-block;
+  font-size: 14px;
+  color: #009DFF;
+  border: 1px solid #009DFF;
+  text-transform: capitalize;
+  padding: 10px 25px;
+}
+
+/* line 108, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.book_now:hover {
+  background: #009DFF;
+  color: #fff;
+}
+
+/* line 113, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn {
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  padding: 17px 50px;
+  background: #04D2C8;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 123, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn:hover {
+  background: transparent;
+  color: #04D2C8;
+  border: 1px solid #04D2C8;
+  color: #04D2C8 !important;
+}
+
+/* line 130, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn_rev {
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  padding: 17px 50px;
+  background: transparent;
+  color: #04D2C8;
+  border: 1px solid #04D2C8 !important;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 142, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn_rev:hover {
+  color: #fff !important;
+  background: #04D2C8 !important;
+}
+
+/* line 148, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn_orange {
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  padding: 10px 25px;
+  background: #FDAE5C;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 158, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn_orange:hover {
+  background: transparent;
+  color: #FDAE5C;
+  border: 1px solid #FDAE5C;
+  color: #FDAE5C !important;
+}
+
+/* line 166, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn_orange2 {
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  padding: 12px 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background: transparent;
+  color: #FDAE5C;
+  border: 1px solid #FDAE5C;
+  display: inline-block;
+}
+
+/* line 178, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_btn.scss */
+.boxed_btn_orange2:hover {
+  color: #fff !important;
+  background: #FDAE5C;
+}
+
+/* line 2, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+.section_title h3 {
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 52px;
+  margin-bottom: 23px;
+  color: #1F1F1F;
+}
+
+@media (max-width: 767px) {
+  /* line 2, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 23px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 2, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 2, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .section_title h3 {
+    font-size: 33px;
+    line-height: 40px;
+  }
+}
+
+/* line 21, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+.section_title p {
+  font-size: 17px;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  line-height: 28px;
+  color: #727272;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  /* line 28, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .section_title p br {
+    display: none;
+  }
+}
+
+/* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  /* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .mb-100 {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .mb-100 {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_section_title.scss */
+  .mb-100 {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 4, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+  .mobile_menu {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    z-index: 9;
+  }
+}
+
+/* line 13, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_menu .slicknav_nav {
+  background: #fff;
+  float: right;
+  margin-top: 0;
+  padding: 0;
+  width: 95%;
+  padding: 0;
+  border-radius: 0px;
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 11px;
+}
+
+/* line 28, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_menu .slicknav_nav a:hover {
+  background: transparent;
+  color: #4A3600;
+}
+
+/* line 32, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_menu .slicknav_nav a.active {
+  color: #4A3600;
+}
+
+@media (max-width: 767px) {
+  /* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+  .slicknav_menu .slicknav_nav a i {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+  .slicknav_menu .slicknav_nav a i {
+    display: none;
+  }
+}
+
+/* line 44, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_menu .slicknav_nav .slicknav_btn {
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 99;
+  border: 1px solid #ddd;
+  top: 3px;
+  right: 5px;
+  top: -32px;
+}
+
+/* line 55, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_menu .slicknav_nav .slicknav_btn .slicknav_icon {
+  margin-right: 6px;
+  margin-top: 3px;
+  position: relative;
+  padding-bottom: 3px;
+  top: -11px;
+  right: -5px;
+}
+
+@media (max-width: 767px) {
+  /* line 12, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+  .slicknav_menu {
+    margin-right: 0px;
+  }
+}
+
+/* line 72, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_nav .slicknav_arrow {
+  float: right;
+  font-size: 22px;
+  position: relative;
+  top: -9px;
+}
+
+/* line 78, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_btn {
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 99;
+  border: none;
+  border-radius: 3px;
+  top: 5px;
+  padding: 5px;
+  right: 5px;
+  margin-top: -5px;
+  top: -31px;
+}
+
+/* line 92, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slick-nav.scss */
+.slicknav_btn {
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 99;
+  border: none;
+  border-radius: 3px;
+  top: 5px;
+  padding: 5px;
+  right: 0;
+  margin-top: -5px;
+  top: -32px;
+}
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area {
+    position: flex;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    border-bottom: #ffcc99;
+    background-color: #ffcc99;
+}
+
+@media (max-width: 767px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area {
+    padding-top: 0;
+  }
+}
+
+/* line 15, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area {
+  padding: 0 150px;
+}
+
+@media (max-width: 767px) {
+  /* line 15, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 15, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 15, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 15, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 0 10px;
+  }
+}
+
+/* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .logo-img {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  /* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+/* line 44, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+}
+
+/* line 50, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room .socail_links ul li {
+  display: inline-block;
+}
+
+/* line 53, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room .socail_links ul li a {
+  color: #A8A7A0;
+  margin: 0 10px;
+  font-size: 15px;
+}
+
+/* line 57, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room .socail_links ul li a:hover {
+  color: #fff;
+}
+
+/* line 64, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room .book_btn {
+  margin-left: 30px;
+}
+
+/* line 66, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room .book_btn a {
+  background: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 14px 20px;
+}
+
+/* line 73, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .book_room .book_btn a:hover {
+  background: #fff;
+  color: #000 !important;
+  border: 1px solid #fff;
+}
+
+/* line 81, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu {
+  text-align: center;
+}
+
+/* line 84, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li {
+  display: inline-block;
+  position: relative;
+  margin-right: 50px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 84, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 84, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li {
+    margin-right: 15px;
+  }
+}
+
+/* line 94, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a {
+  color: #000;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 600;
+  display: inline-block;
+  padding: 34px 0;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  text-transform: capitalize;
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 94, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 94, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a {
+    font-size: 15px;
+  }
+}
+
+/* line 113, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a i {
+  font-size: 9px;
+}
+
+@media (max-width: 767px) {
+  /* line 113, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a i {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 113, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area .main-menu ul li a i {
+    display: none !important;
+  }
+}
+
+/* line 122, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a::before {
+  position: absolute;
+  content: "";
+  background: #000;
+  width: 100%;
+  height: 3px;
+  bottom: 25px;
+  left: 0;
+  opacity: 0;
+  z-index: 9;
+  transform: scaleX(0);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* line 135, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* line 140, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a.active::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* line 145, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li a:hover {
+  color: #000;
+}
+
+/* line 149, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu {
+  position: absolute;
+  left: 0;
+  top: 140%;
+  background: #fff;
+  width: 200px;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+  opacity: 0;
+  visibility: hidden;
+  text-align: left;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
+}
+
+/* line 161, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li {
+  display: block;
+}
+
+/* line 163, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li a {
+  padding: 10px 15px;
+  position: inherit;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  display: block;
+  color: #000;
+}
+
+/* line 169, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li a::before {
+  display: none;
+}
+
+/* line 173, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li .submenu li:hover a {
+  color: #000;
+}
+
+/* line 178, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li:hover > .submenu {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+/* line 183, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li:hover > a::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* line 187, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area .main-menu ul li:first-child a {
+  padding-left: 0;
+}
+
+/* line 193, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area.sticky {
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: -70px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(70px);
+  transition: transform 500ms ease, background 500ms ease;
+  -webkit-transition: transform 500ms ease, background 500ms ease;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+  padding: 0px 150px;
+}
+
+@media (max-width: 767px) {
+  /* line 193, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area.sticky {
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 193, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area.sticky {
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 193, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area.sticky {
+    padding: 0px 20px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 193, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .main-header-area.sticky {
+    padding: 0px 20px;
+  }
+}
+
+/* line 219, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .main-header-area.sticky .main-menu {
+  padding: 0;
+}
+
+/* line 225, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .log_chat_area {
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+}
+
+/* line 227, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .log_chat_area .login {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 227, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .log_chat_area .login {
+    margin-right: 7px;
+  }
+}
+
+/* line 235, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .log_chat_area .login i {
+  color: #000;
+  padding-right: 7px;
+ 
+}
+
+
+/* line 244, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .log_chat_area .live_chat_btn a {
+  color: #000;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 244, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .log_chat_area .live_chat_btn a {
+    padding: 12px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 244, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+  .header-area .log_chat_area .live_chat_btn a {
+    font-size: 13px;
+    padding: 12px 25px;
+  }
+}
+
+/* line 254, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_header.scss */
+.header-area .log_chat_area .live_chat_btn a i {
+  padding-right: 7px;
+}
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+.slider_bg_1 {
+  background-image: url(../img/banner/banner.png);
+}
+
+/* line 5, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+.slider_area .single_slider {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* line 10, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+.slider_area .single_slider .illastrator_png {
+  position: relative;
+  right: 63px;
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .illastrator_png {
+    right: 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .illastrator_png {
+    right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .illastrator_png {
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 10, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .illastrator_png {
+    right: 0;
+  }
+}
+
+/* line 25, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+.slider_area .single_slider .illastrator_png img {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  /* line 29, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_info {
+    text-align: center;
+  }
+}
+
+/* line 33, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+.slider_area .single_slider .slider_info h3 {
+  color: #ffffff;
+  font-size: 60px;
+  text-transform: capitalize;
+  font-weight: 400;
+  line-height: 70px;
+  margin-bottom: 50px;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  /* line 33, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_info h3 {
+    font-size: 24px;
+    letter-spacing: 0px;
+    line-height: 35px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 33, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_info h3 {
+    font-size: 30px;
+    line-height: 46px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 33, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_slider.scss */
+  .slider_area .single_slider .slider_info h3 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+
+/* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area {
+  padding: 200px 0 270px 0;
+}
+
+@media (max-width: 767px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area {
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area {
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 1, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area {
+    padding: 200px 0 200px 0;
+  }
+}
+
+/* line 12, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .single_about_info {
+  position: relative;
+}
+
+/* line 14, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .single_about_info h3 {
+  font-size: 46px;
+  line-height: 56px;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  /* line 14, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .single_about_info h3 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 14, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .single_about_info h3 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+}
+
+/* line 27, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .single_about_info p {
+  font-size: 17px;
+  font-weight: 400;
+  color: #727272;
+  margin-top: 10px;
+  margin-bottom: 42px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 35, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials {
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-evenly;
+    -moz-justify-content: space-evenly;
+    -ms-justify-content: space-evenly;
+    justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+  }
+}
+
+/* line 41, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials span {
+  font-size: 60px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 70px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 41, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials span {
+    font-size: 35px;
+    line-height: 39px;
+  }
+}
+
+/* line 51, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .text_info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 57, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .text_info p {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* line 62, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses {
+  border-radius: 50%;
+  text-align: center;
+  top: -5px;
+  position: absolute;
+  left: 10%;
+  z-index: 3;
+}
+
+@media (max-width: 767px) {
+  /* line 62, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 62, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses {
+    position: static;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 62, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses {
+    left: 0;
+  }
+}
+
+/* line 81, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses .inner_courses {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  /* line 81, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses .inner_courses {
+    width: 290px;
+    height: 290px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 81, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses .inner_courses {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* line 98, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses .inner_courses::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #FD8E5E;
+  border-radius: 50%;
+  opacity: .7;
+  left: 0;
+  top: 0;
+}
+
+/* line 111, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses-blue {
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  top: -60px;
+}
+
+@media (max-width: 767px) {
+  /* line 111, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-blue {
+    position: static;
+    margin: 30px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 111, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-blue {
+    position: static;
+  }
+}
+
+/* line 124, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses-blue .inner_courses {
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  /* line 124, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-blue .inner_courses {
+    width: 290px;
+    height: 290px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 124, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-blue .inner_courses {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* line 139, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses-blue .inner_courses::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #5DB2FF;
+  border-radius: 50%;
+  opacity: .7;
+  left: 0;
+  top: 0;
+}
+
+/* line 152, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses-sky {
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 27%;
+  top: 50%;
+}
+
+@media (max-width: 767px) {
+  /* line 152, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-sky {
+    position: static;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 152, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-sky {
+    position: static;
+  }
+}
+
+/* line 165, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses-sky .inner_courses {
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  /* line 165, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-sky .inner_courses {
+    width: 290px;
+    height: 290px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 165, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+  .about_area .about_tutorials .courses-sky .inner_courses {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* line 180, C:/Users/SPN Graphics/Desktop/CL September/Edu mark/207 Education/HTML/scss/_about.scss */
+.about_area .about_tutorials .courses-sky .inner_courses::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #04D2C8;
+  border-radius: 50%;
+  opacity: .7;
+  left: 0;
+  top: 0;
+}
+
+span.header_login {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    
+}
+
+div.header_search {
+    background: #363636;
+    border-radius: 30px;
+    margin-right: 20px;
+    border: 1px solid #363636;
+}
+
+div.header_search button.button_search i{
+    margin-right: 3px;
+    color: white;
+    font-weight: 600;
+}
+
+
+
+div.header_search .header_search_input{
+    border: none;
+    outline: none;
+    background: none;
+    justify-content: center;
+    font-size: 15px;
+    font-family: Arial;
+    width: 0;
+    padding: 1px;
+    transition: all 0.25s ease-in-out;
+    color: #fff;
+    
+}
+
+div.header_search:hover .header_search_input, div.header_search .header_search_input:valid{
+    width: 180px;
+    padding: 10px 0px 10px 15px;
+    
+}
+
+div.header_search .button_search{
+    background-color: #363636;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+div.shopping_cart span.shopping_cart_item i{
+    margin-right: 20px;
+    cursor: pointer;
+}
+/*/Header*/
+
+/*Body*/
+/*Home*/
+
+div.features_items_home{
+    margin-top: 50px;
+}
+
+div.features_items_home h2.title_home {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+    font-weight: bold;
+    background-color: #FFCC99;
+}
+
+strong.proname_home{
+    font-size: 20px;
+
+}
+
+h2.proname_home:hover{
+    color: #F27405;
+    transition: .3s;
+}
+
+h2.proprice_home{
+    font-size: 25px;
+    color: #000;
+}
+
+strong.proprice_home:hover{
+    color: #F27405;
+    transition: .3s;
+}
+
+button.button_home {
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    height: 45px;
+    background-color: #FFCC99;
+}
+
+button.button_home:hover{
+    background-color: #FFCC33;
+    transition: .3s;
+}
+
+
+/*recommended items*/
+
+/*End recommended items*/
+
+/*End home*/
+/*Giới thiệu*/
+section.bread-crumb {
+    margin: 0;
+    background-color: #000;
+    background-image: url('../img/banner/banner_gioithieu.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+    z-index: 0;
+}
+
+div.bread-crumb-title{
+    margin-left: 385px;
+    font-size: 30px;
+    font-family: Arial;
+    font-weight: bolder;
+    margin-top: 100px;
+    color: #fff;
+}
+
+section.bread-crumb div.bread-crumb-link ul li{
+    font-size: 25px;
+    font-weight: 500;
+    font-family: Arial;
+    margin-left: 420px;
+    margin-top: 15px;
+    color: #fff;
+}
+section.bread-crumb div.bread-crumb-link ul li a{
+    font-size: 25px;
+    color: #fff;
+}
+
+section.bread-crumb div.bread-crumb-link ul li a:hover{
+    font-weight: bolder;
+    font-size: 27px;
+    color: #fff;
+}
+
+/* Title giới thiệu*/
+div.introduce{
+    font-family: Arial;
+    margin-top: 50px;
+}
+
+span.title_introduce {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF6600;
+    margin-top: 50px;
+}
+
+span.title_introduce i{
+    color: #FF6600;
+}
+
+p.opening_introduce {
+    font-size: 18px;
+    color: #777777;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+span.content_introduce{
+    font-size: 16px;
+    color: #999999;
+    margin-bottom: 10px;
+}
+
+img.introduce_img {
+    width: 90%;
+    height: 350px;
+    border-radius: 30px;
+    margin-left: 30px;
+    margin-top: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+div.introduce_2{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h1.introduce{
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+div.percent{
+    text-align: right;
+    line-height: 3;
+}
+
+div.progress {
+    background-color: #FFCC33;
+    border-radius: 15px;
+}
+
+ul.accordion li {
+    list-style: none;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+ul.accordion li label{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+
+}
+
+ul.accordion li label:hover{
+    color: #FF6600;
+    font-weight: bolder;
+    transition: 0.5s;
+}
+
+
+ul.accordion li label span{
+    transform: rotate(90deg);
+    font-size: 22px;
+    color: #000;
+}
+
+ul.accordion label + input[type="radio"]{
+    display: none;
+}
+
+ul.accordion div.content{
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+ul.accordion label + input[type="radio"]:checked + div.content{
+    max-height: 400px;
+}
+/* End Title giới thiệu*/
+/*End Giới thiệu*/
+
+/* Chính sách */
+/* End chính sách */
+
+/* Liên hệ */
+div.information_contact{
+    padding-top: 70px;
+    margin-bottom: 70px;
+}
+div.information_contact p.title_contact{
+     font-size: 25px;
+     font-weight: bolder;
+     color: #FF6600;
+     font-family: Arial;
+}
+div.information_contact #contact {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.information_contact i span.content_contact{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial;
+    
+    
+}
+
+div.information_contact span.title_contact_address {
+    color: #777777;
+    font-family: Arial;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+div.information_contact iframe{
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+div.information_contact p.title_form{
+    font-family:Arial;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-left: 15px;
+    color: #FF6600;
+}
+
+div.information_contact p.comment_form{
+    font-weight: bold;
+    font-size: 19px;
+    font-family:Arial;
+    margin-bottom: 50px;
+    margin-left: 15px;
+}
+
+div.information_contact input.form_name{
+    width: 100%;
+    height: 45px;
+    padding: 8px 20px;
+    margin-bottom: 30px;    
+    font-family:Arial;
+}
+
+div.input_group {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa email và phone */
+}
+
+div.input_group input {
+    flex: 1; /* Chia đều không gian */
+    height: 45px;
+    padding: 8px 20px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea.form_note {
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 8px 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+button.button_contact{
+    color: #fff;
+    background-color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    margin-left: 15px;
+    border-radius: 8px;
+    height: 50px;
+
+}
+
+button.button_contact:hover{
+    color: #000;
+    background-color: #FDCF76;
+    transition: 0.5s;
+}
+/*End Liên hệ*/
+
+/*Blog*/
+
+
+div.card{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+
+div.card button.button_blog{
+    width: 150px;
+    font-size: 18px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 10px;
+    background: #BBBBBB;
+    height: 40px;
+}
+
+div.card button.button_blog:hover{
+    background: #FF6600;
+    transition: 0.7s;
+}
+
+.knowledge-section {
+    background-color: #fef6ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+.knowledge-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #000;
+}
+
+.knowledge-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: none;
+    transition: transform 0.2s;
+}
+
+.knowledge-item:hover {
+    transform: scale(1.02);
+}
+
+.knowledge-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.knowledge-item .content {
+    flex: 1;
+}
+
+.knowledge-item .comments {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.knowledge-item .comments i {
+    margin-right: 5px;
+    color: #ffa500;
+}
+
+.knowledge-item h3 {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+div.details_blog{
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
+div.details_blog img.blog_img{
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+div.details_blog p.title_blog{
+    font-size: 24px;
+    font-weight: bolder;
+    font-family: Arial;
+    margin-top: 30px;
+    color: #FF6600;
+}
+
+div.details_blog span.content_blog{
+    font-size: 16px;
+    font-family: Arial;
+    color: #777777;
+}
+
+div.details_blog span.title_content_blog{
+    font-size: 18px;
+    font-family: Arial;
+    font-weight: bold;
+   color: #FF6600;
+}
+
+div.details_blog hr{
+    border-color: #000;
+
+}
+/*End Blog*/
+
+/* Product */
+section.product{
+    margin-top: 50px;
+}
+
+section.product .features_items h2.title{
+    font-family:Arial;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #F27405;
+}
+
+section.product .features_items hr{
+    border: 1px solid #000;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+section.product .features_items img{
+    width: 97%;
+    height: 280px;
+    border-radius: 20px;
+}
+
+section.product .features_items img:hover{
+    height: 300px;
+    width: 100%;
+    transition: .3s;
+}
+
+div.features_items_home h2.title_home {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+    font-weight: bold;
+    background-color: #FFCC99;
+}
+
+strong.proname_product{
+    font-size: 20px;
+    font-family: Arial;
+
+}
+
+strong.proname_product:hover{
+    color: #F27405;
+    transition: .3s;
+}
+
+section.product .features_items h2{
+    font-size: 23px;
+}
+
+section.product .features_items h2:hover{
+    color: #F27405;
+    transition: .3s;  
+}
+
+
+
+button.button_product {
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    height: 45px;
+    background-color: #FFCC99;
+}
+
+button.button_product:hover{
+    background-color: #FFCC33;
+    color: #000;
+    transition: .3s;
+}
+
+
+
+/* End Product */
+
+/* Product_Details*/
+section.product_details{
+    margin-top: 70px;
+    
+}
+
+section.product_details h2.text-center{
+    font-family: "Quicksand", sans-serif;
+    font-weight: bolder;
+    margin-bottom:40px;
+    font-size: 35px;
+}
+
+section.product_details h4.text-uppercase{
+    font-family: "Quicksand", sans-serif;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+section.product_details h4 strong{
+    font-size: 25px;
+}
+
+section.product_details hr{
+    border : 1px solid;
+    color : #000;
+}
+
+section.product_details p{
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color : #666666;
+}
+
+section.product_details p span{
+    font-family: "Quicksand", sans-serif;
+    color: #000;
+    font-weight: 200;
+    font-size: 16px;
+}
+
+section.product_details button{
+    margin-top: 15px;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-family: "Quicksand", sans-serif;
+    font-size: 17px;
+    background-color: #FDCF76;
+    border: 0px solid;
+    margin-bottom: 20px;
+}
+
+section.product_details button:hover{
+    background-color: #EE9A00;
+    font-weight: bolder;
+    transition: .3s;
+}
+
+section.product_details p.back_product i{
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+section.product_details p.back_product{
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+}
+/* End Product_Details*/
+
+/*Shopping Cart*/
+section.shopping_cart p.shopping_cart_title{
+    text-align: center;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+}
+/*End Shopping Cart*/
+
+/*Login*/
+
+/*End Login*/
+
+/*Body*/
+/* Footer */
+.footer {
+    margin-top: auto;
+    background-color: #FDCF76;
+}
+
+div.footer_logo a img{
+    width: 170px;
+    height: 100px;
+    padding-left: 60px;
+}
+
+p.footer_document {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    
+    
+    
+}
+
+p.footer_document span.footer_document_title {
+    font-weight: bolder;
+}
+
+div.link_page p.title_link_page{
+    text-align:center;
+    font-family: Arial;
+    font-size: 22px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+div.link_page ul li {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-family: Arial;
+}
+
+div.link_page ul li:hover{
+    font-weight: bold;
+    color: #000;
+    transition: 0.6s;
+}
+
+div.socail_links ul li a.socail_links_item {
+    font-size: 28px;
+    margin-right: 15px;
+    padding-left: 10px;
+    color: #1F1F1F;
+}
+div.socail_links ul li a.socail_links_item span.item_facebook:hover {
+    color: #007bff;
+    transition: 0.2s;
+}
+div.socail_links ul li a.socail_links_item span.item_twitter:hover {
+    color: #007bff;
+    transition: 0.2s;
+}
+
+div.socail_links ul li a.socail_links_item span.item_instergram:hover{
+    color: hotpink; 
+    transition: 0.2s;
+}
+
+div.socail_links ul li a.socail_links_item span.item_youtube:hover {
+    color: red;
+    transition: 0.2s;
+}
+div.footer_widget h3.footer_title {
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+div.footer_widget table{
+    margin-top: 30px;
+}
+
+
+div.footer_widget table tr td a img.footer_outstanding {
+    width: 80px;
+    height: 80px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+div.footer_widget table tr td.footer_title_address{
+   font-weight: 500;
+   font-family: Arial;
+   font-size: 18px;
+   padding-bottom: 10px;
+   padding-top: 15px;
+}
+
+div.footer_widget table tr td.footer_title_address i{
+    margin-right:10px;
+}
+

@@ -1,0 +1,191 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Layout</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- CSS here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/fontawesome.css">
+    <link rel="stylesheet" href="~/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+
+
+
+    <!-- <link rel="stylesheet" href="~/css/responsive.css"> -->
+</head>
+
+<body>
+    <!-- header-start -->
+    <header>
+        <div class="header-area" style="background-color: #ffcc99;">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="@Url.Action("Index", "Home")">
+                                    <img class="logo" style="width: 120px; height: 120px" src="~/img/logo/LogoWeb.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+                                        <li>
+                                            @Html.ActionLink("Giới Thiệu", "Index", "GioiThieu")
+                                            <ul class="submenu">
+                                                <li>@Html.ActionLink("Chính Sách", "ChinhSach", "GioiThieu")</li>
+                                                <li>@Html.ActionLink("Tin Tức", "Index", "TinTuc")</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Sản Phẩm", "Index", "Product")
+                                            <ul class="submenu">
+                                                <li>@Html.ActionLink("Thú Cưng", "Index", "Product")</li>
+                                                <li>@Html.ActionLink("Phụ Kiện", "Index", "PhuKien")</li>
+                                                <li>@Html.ActionLink("Dịch Vụ", "Index", "DichVu")</li>
+
+                                            </ul>
+                                        </li>
+                                        <li>@Html.ActionLink("Liên Hệ", "Index", "LienHe")</li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                            <div class="log_chat_area d-flex align-items-center">
+                                <div class="header_search">
+                                    <input class="header_search_input" type="text" placeholder="Bạn muốn tìm gì ?" required />
+                                    <button class="button_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                                <div class="shopping_cart">
+                                    @Html.Partial("_CartInfo")
+                                </div>
+                                <a href="@Url.Action("Login", "Login")" class="login popup-with-form">
+                                    <span style="margin-left: 10px;" class="header_login">Đăng Nhập</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    @RenderBody()
+    <!--Footer-->
+    <footer class="footer footer_img" style="background-color: #ffcc99;">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-3 col-lg-3">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="~/img/logo/LogoWeb.png" alt="" />
+                                </a>
+                                <p class="footer_document">
+                                    <span class="footer_document_title">NABI PET SHOP</span> cung cấp thú cưng và dịch vụ chăm sóc chất lượng cao trong môi trường sạch sẽ, thoáng mát.
+                                    Chúng tôi đảm bảo thú cưng khỏe mạnh, được tiêm phòng đầy đủ và chăm sóc kỹ lưỡng.
+                                    Đội ngũ nhân viên tận tâm luôn sẵn sàng tư vấn để giúp bạn tìm thấy người bạn đồng hành lý tưởng.
+                                </p>
+
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="socail_links_item">
+                                                <span class="item_facebook"><i class="fa-brands fa-square-facebook"></i></span>
+                                            </a>
+                                            <a href="#" class="socail_links_item">
+                                                <span class="item_instergram"><i class="fa-brands fa-square-instagram"></i></span>
+                                            </a>
+                                            <a href="#" class="socail_links_item">
+                                                <span class="item_twitter"><i class="fa-brands fa-square-twitter"></i></span>
+                                            </a>
+                                            <a href="#" class="socail_links_item">
+                                                <span class="item_youtube"><i class="fa-brands fa-square-youtube"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-lg-3">
+                        <div class="link_page">
+                            <p class="title_link_page">Links</p>
+                            <ul>
+                                <li style="font-weight: bolder;">@Html.ActionLink("Giới Thiệu", "Index", "GioiThieu")</li>
+                                <li style="font-weight: bolder;">@Html.ActionLink("Liên Hệ", "Index", "LienHe")</li>
+                                <li style="font-weight: bolder;">@Html.ActionLink("Chính Sách", "Index", "ChinhSach")</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title"><i class="fa-solid fa-paw"></i> Sản Phẩm <i class="fa-solid fa-paw"></i></h3>
+                            <table>
+                                <tr>
+                                    <td><a href="#"><img class="footer_outstanding" src="~/img/pet/alaska1.png" /></a></td>
+                                    <td><a href="#"><img class="footer_outstanding" src="~/img/pet/ChoChihuahuaMuChoco.png" /></a></td>
+                                    <td><a href="#"><img class="footer_outstanding" src="~/img/pet/ChoCorgilongnganvangtrang.png" /></a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#"><img class="footer_outstanding" src="~/img/pet/ChoLabradorMaunausocolaMaLD30817.jpg" /></a></td>
+                                    <td><a href="#"><img class="footer_outstanding" src="~/img/pet/ChoPhocsocminitrangmaPS30729.jpg" /></a></td>
+                                    <td><a href="#"><img class="footer_outstanding" src="~/img/pet/MeoAnhmauBicinamonMaAN30813.jpg" /></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title"><i style="margin-right : 10px;" class="fa-solid fa-house"></i>Địa chỉ</h3>
+                            <table style="text-align: center;">
+                                <tr>
+                                    <td style="font-weight: bolder;" class="footer_title_address"><i class="fa-solid fa-location-dot"></i>CS1: 272 Vạn Kiếp, Phường 3, Q.Bình Thạnh</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bolder;" class="footer_title_address"><i class="fa-solid fa-location-dot"></i>CS2: 25 Trần Khắc Chân, Phường Tân Định, Q.1</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bolder;" class="footer_title_address"><i class="fa-solid fa-phone"></i>0867762110</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-weight: bolder;" class="footer_title_address"><i class="fa-solid fa-envelope"></i>NabiPetShop@gmail.com</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>

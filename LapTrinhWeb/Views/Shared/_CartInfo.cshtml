@@ -1,0 +1,42 @@
+﻿@using LapTrinhWeb.Models;
+@{
+    if (Session["Cart"] != null && ((List<Cart>)Session["Cart"]).Count > 0)
+    {
+        List<Cart> temp = (List<Cart>)Session["Cart"];
+        var count = temp.Sum(x => x.Quantity);
+        <ul class="nav navbar-nav navbar-right">
+            <li style="position: relative;">
+                <a href="@Url.Action("Index", "ShoppingCart")" style="color: black; margin-right: 10px;">
+                    <i class="fa-solid fa-cart-shopping" style="font-size: 25px;"></i>
+                    <span style="
+                        position: absolute;
+                        top: -8px;
+                        right: -1px;
+                        background-color: red;
+                        color: white;
+                        font-size: 10px;
+                        border-radius: 50%;
+                        padding: 2px 6px;
+                        font-weight: bold;">
+                        @count
+                    </span>
+                </a>
+            </li>
+        </ul>
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="@Url.Action("Index", "ShoppingCart")" style="color: black; margin-right: 10px;">
+                    <i class="fa-solid fa-cart-shopping" style="font-size: 25px;"></i>
+                </a>
+            </li>
+        </ul>
+    }
+}
+
+
+
+
+
