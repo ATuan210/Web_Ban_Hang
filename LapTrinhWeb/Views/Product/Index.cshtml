@@ -2,10 +2,39 @@
 @using LapTrinhWeb.Models;
 @using PagedList;
 @using PagedList.Mvc;
+@using System.Globalization
 @model PagedList.IPagedList<LapTrinhWeb.Models.Product>
+
 @{
     ViewBag.Title = "Product Index";
 }
+
+
+<style>
+    .grow-img {
+        width: 95%;
+        border-radius: 20px;
+        margin-bottom: 15px; /* chừa khoảng cách với chữ */
+        transition: transform 0.3s ease;
+    }
+
+    .grow-img:hover {
+       transform: scale(1.05);
+       cursor: pointer;
+     }
+
+    .sold-out {
+        max-width: 300px;
+        margin: 50px auto;
+        display: block;
+        transition: none; /* bỏ hiệu ứng hover */
+    }
+
+    .sold-out:hover {
+       transform: none; /* không scale khi hover */
+       cursor: default; /* con trỏ mặc định */
+     }
+</style>
 
 <section class="product">
     <div class="container">
@@ -19,32 +48,43 @@
                     <h2 class="title"><i class="fa-solid fa-paw"></i> Tất cả sản phẩm <i class="fa-solid fa-paw"></i></h2>
                     <hr />
                     <div class="row">
-                        @foreach (var item in Model)
+                        @if (Model != null && Model.Any())
                         {
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="~/img/pet/@item.ProImage" alt="">
-                                            <a href="@Url.Action("Details", "Product",  new { id = item.ProId })"><strong class="proname_product">@item.ProName</strong></a><br />                                            <h2>@item.ProPrice đ</h2>
-                                            <button class="button_product" type="button">
-                                                @Html.ActionLink("Thêm vào giỏ hàng", "OrderNow", "ShoppingCart", new { Id = item.ProId }, null)
-                                            </button>
+                            foreach (var item in Model)
+                            {
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <a href="@Url.Action("Details", "Product", new { id = item.ProId })">
+                                                    <img class="grow-img" style="width: 100%; border-radius: 20px;"
+                                                         src="~/img/pet/@item.ProImage"
+                                                         alt="@item.ProName">
+                                                </a>
+                                                <a href="@Url.Action("Details", "Product", new { id = item.ProId })"><strong class="proname_product">@item.ProName</strong></a><br />
+                                                <h2>@String.Format(new CultureInfo("vi-VN"), "{0:C0}", (object)item.ProPrice)</h2>
+                                                <button class="button_product" type="button">
+                                                    @Html.ActionLink("Thêm vào giỏ hàng", "OrderNow", "ShoppingCart", new { Id = item.ProId }, null)
+                                                </button>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            }
+
+                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, categoryId = ViewBag.CurrentCategoryId }))
+                        }
+                        else
+                        {
+                            <div class="col-12 text-center">
+                                <img class="sold-out" src="~/img/GioiThieu/OutOfStock.png" alt="Chưa có sản phẩm"/>
+                                <h4 style="font-family: Arial; font-weight: bolder; margin-bottom: 50px;">Hiện tại chưa có sản phẩm trong danh mục này.</h4>
                             </div>
                         }
-                        
-                            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
-                        
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-    
 </section>

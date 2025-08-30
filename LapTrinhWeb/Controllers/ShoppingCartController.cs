@@ -1,11 +1,12 @@
-﻿using System;
+﻿using LapTrinhWeb.Models;
+using LapTrinhWeb.Services.Vnpay;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using LapTrinhWeb.Models;
-using System.Net;
-using System.Diagnostics.CodeAnalysis;
 
 
 namespace DoAnLapTrinhWeb.Controllers
@@ -13,6 +14,13 @@ namespace DoAnLapTrinhWeb.Controllers
     public class ShoppingCartController : Controller
     {
         private Product_DBContext dBContext = new Product_DBContext();
+        private readonly IVnPayService _vnPayService;
+
+        public ShoppingCartController(IVnPayService vnPayService)
+        {
+            _vnPayService = new VnPayService(); // tự khởi tạo
+        }
+
         private string strCart = "Cart";
         // GET: ShoppingCart
         public ActionResult Index()
@@ -99,7 +107,17 @@ namespace DoAnLapTrinhWeb.Controllers
 
         public ActionResult CheckOut()
         {
+            
             return View();
+        }
+
+        // Callback từ VNPAY
+        [HttpGet]
+        public ActionResult PaymentCallbackVnpay()
+        {
+            var response = _vnPayService.PaymentExecute(Request.QueryString);
+
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

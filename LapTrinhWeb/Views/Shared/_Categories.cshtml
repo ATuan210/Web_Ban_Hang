@@ -4,12 +4,12 @@
     List<Category> Listcategories = dBContext.Categories.ToList();
 }
 <div class="left-sidebar" style="background-color: #ffcc99; border-radius: 20px;">
-    <h2 style="text-align: center; margin: 50px 0px 20px 0px;">Category</h2>
+    <h2 style="text-align: center; margin: 50px 0px 20px 0px; padding-top: 30px;">Danh Mục</h2>
     <div class="panel-group category-products" id="accordian">
         <!--category-productsr-->
         @foreach (var item in Listcategories)
         {
-            <div class="panel panel-default" style="font-weight:bolder; margin-left: 20px; margin-bottom: 15px;">
+            <div class="panel panel-default" style="font-weight:bolder; margin-left: 20px; padding-bottom: 20px;">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordian" href="#mens">

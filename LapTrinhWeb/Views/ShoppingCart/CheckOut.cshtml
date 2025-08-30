@@ -3,6 +3,38 @@
     ViewBag.Title = "CheckOut";
 }
 
+<style>
+    .control-label {
+        font-weight: bolder;
+        margin-left: 250px;
+        margin-top: 20px;
+        font-family: Arial;
+
+    }
+
+    .form-control {
+        margin-left: 250px;
+        width: 50%;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+
+    .btn {
+        font-size: 17px;
+        font-family: Arial;
+        font-weight: bolder;
+        background-color: #FFCC66;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 250px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+
+    .btn:hover {
+       background-color: #FFCC33;
+    }
+    
+</style>
+
 
 <h2 style="text-align: center; margin: 20px 0px 30px 0px;">Thanh Toán Hóa Đơn</h2>
 
@@ -48,41 +80,48 @@ else
     <h4>No items in your cart!</h4>
 }
 
-<h3>Thông tin khách hàng</h3>
+<h3 style="margin-left: 200px; margin-top: 50px; font-family: Arial; font-weight: bolder;">Thông tin khách hàng <i class="fa-solid fa-heart"></i></h3>
 @using (Html.BeginForm("ProcessOrder", "ShoppingCart", FormMethod.Post, new { id = "customer-form" }))
 {
     @Html.AntiForgeryToken()
-    <div class="form-horizontal">
-        <div class="form-group">
-            <label class="control-label col-md-2">Customer's Name</label>
-            <div class="col-md-10">
-                <input type="text" name="cusName" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Customer's Phone</label>
-            <div class="col-md-10">
-                <input type="text" name="cusPhone" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Customer's Email</label>
-            <div class="col-md-10">
-                <input type="text" name="cusEmail" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">Customer's Address</label>
-            <div class="col-md-10">
-                <input type="text" name="cusAddress" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Process Order" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2">Tên khách hàng :</label>
+        <div class="input-info col-md-10">
+            <input type="text" name="cusName" class="form-control" />
         </div>
     </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Số điện thoại :</label>
+        <div class="input-info col-md-10">
+            <input type="text" name="cusPhone" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Email khách hàng :</label>
+        <div class="input-info col-md-10">
+            <input type="text" name="cusEmail" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">Địa chỉ khách hàng :</label>
+        <div class="input-info col-md-10">
+            <input type="text" name="cusAddress" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Xác nhận đơn hàng" class="btn btn-default" />
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; margin-bottom: 30px;">
+        <a href="@Url.Action("Index", "ShoppingCart")"
+           style="text-decoration: none; font-weight: bold; font-size: 18px; display: inline-flex; align-items: center; margin-left: 230px; margin-right: 220px; color: #000;">
+            <i class="fa-solid fa-backward" style="margin-right: 8px;"></i> Quay lại giỏ hàng
+        </a>
+    </div>
+</div>
 }
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>

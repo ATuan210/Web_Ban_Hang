@@ -28,5 +28,8 @@ namespace LapTrinhWeb.Controllers
             Product product = dBContext.Products.Include(cat => cat.Category).FirstOrDefault(x => x.ProId == id);
             return View(product);
         }
+
+        
+
     }
 }

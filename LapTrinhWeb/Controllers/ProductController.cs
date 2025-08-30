@@ -21,7 +21,7 @@ namespace LapTrinhWeb.Controllers
             // Lấy d/s sản phẩm từ database
             IQueryable<Product> productsQuery = dBContext.Products.Include(p => p.Category);
 
-            
+
 
             // Lọc theo categoryId nếu được truyền
             if (categoryId.HasValue && categoryId > 0)
@@ -32,10 +32,12 @@ namespace LapTrinhWeb.Controllers
             // Sắp xếp d/s các sản phẩm
             productsQuery = productsQuery.OrderBy(p => p.ProName);
 
+            // Lưu categoryId vào ViewBag để giữ filter khi phân trang
+            ViewBag.CurrentCategoryId = categoryId;
+
             // Áp dụng phân trang
             var pagedProducts = productsQuery.ToPagedList(pageNumber, pageSize);
 
-            
             // Truyền danh sách phân trang sang View
             return View(pagedProducts);
                 

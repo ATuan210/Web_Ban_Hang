@@ -36,14 +36,32 @@ namespace LapTrinhWeb.Controllers
                         .Include(urm => urm.User)
                         .Include(urm => urm.RoleMaster)
                         .FirstOrDefault(urm => urm.User.UserName == model.UserName);
+                    Session["UserName"] = model.UserName;
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
-                    if (user.RoleID == 1 || user.RoleID == 2)
+                    // Lấy roleName từ DB
+                    var roleName = user.RoleMaster.RoleName;
+
+                    // Tạo ticket kèm role
+                    var authTicket = new FormsAuthenticationTicket(
+                        1,
+                        model.UserName,
+                        DateTime.Now,
+                        DateTime.Now.AddMinutes(30),
+                        false,
+                        roleName
+                    );
+
+                    string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                    var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                    Response.Cookies.Add(authCookie);
+                    
+                    if (roleName == "Admin")
                     {
                         return RedirectToAction("Index", "Products", new { area = "Admin" });
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Products", new { area = "Admin" });
                     }
                 }
                 ModelState.AddModelError("", "Invalid Username or Password");
@@ -56,16 +74,42 @@ namespace LapTrinhWeb.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Signup(User model)
+        
+        public ActionResult Signup(UserModel userModel)
         {
             using (Product_DBContext context = new Product_DBContext())
             {
-                model.UserPassword = GetMD5(model.UserPassword);
-                context.Users.Add(model);
+                // Map từ UserModel sang User (entity)
+                var user = new User
+                {
+                    UserName = userModel.UserName,
+                    UserPassword = GetMD5(userModel.UserPassword),
+                };
+
+                // Lưu User vào DB
+                context.Users.Add(user);
                 context.SaveChanges();
+
+                // Lấy role mặc định
+                var defaultRole = context.RoleMasters.FirstOrDefault(r => r.RoleName == "User");
+
+                if (defaultRole != null)
+                {
+                    // Gán role cho user vừa đăng ký
+                    var mapping = new UserRolesMapping
+                    {
+                        UserID = user.ID,         // ID đã có sau SaveChanges
+                        RoleID = defaultRole.ID
+                    };
+
+                    context.UserRolesMappings.Add(mapping);
+                    context.SaveChanges();
+                }
             }
+
             return RedirectToAction("Login");
         }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();

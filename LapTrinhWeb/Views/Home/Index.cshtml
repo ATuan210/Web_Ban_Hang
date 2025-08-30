@@ -1,8 +1,25 @@
 ﻿@model IEnumerable<LapTrinhWeb.Models.Product>
-
+@using System.Globalization
 @{
     ViewBag.Title = "Home Page";
 }
+
+<style>
+    .grow-img {
+        width: 95%;
+        border-radius: 20px;
+        margin-bottom: 15px; /* chừa khoảng cách với chữ */
+        transition: transform 0.3s ease;
+    }
+
+        .grow-img:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+
+
+</style>
 <body style="font-family: Arial;">
     <div class="container">
         <!-- Carousel với Bootstrap 5 -->
@@ -31,7 +48,7 @@
             <div class="col-xl-3 col-lg-3 col-md-3">
                 @Html.Partial("_Categories")
 
-                <img src="~/img/GioiThieu/poster_pet.png" alt="ảnh poster" style="width: 250px; height: 380px; margin-top: 70px;"/>
+                <img src="~/img/GioiThieu/poster_pet.png" alt="ảnh poster" style="width: 250px; height: 380px; margin-top: 70px;" />
             </div>
             <div class="col-xl-9 col-lg-9 col-md-9 padding-right">
                 <div class="features_items_home">
@@ -45,9 +62,13 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img style="width: 100%; border-radius: 20px;" src="~/img/pet/@item.ProImage" alt="">
+                                            <a href="@Url.Action("Details", "Product", new { id = item.ProId })">
+                                                <img class="grow-img" style="width: 100%; border-radius: 20px;"
+                                                     src="~/img/pet/@item.ProImage"
+                                                     alt="@item.ProName">
+                                            </a>
                                             <a href="@Url.Action("Details", "Product",  new { id = item.ProId })"><strong class="proname_home">@item.ProName</strong></a><br />
-                                            <h2 class="proprice_home">@item.ProPrice đ</h2>
+                                            <h4>@String.Format(new CultureInfo("vi-VN"), "{0:C0}", (object)item.ProPrice)</h4>
                                             <button class="button_home" type="button">
                                                 @Html.ActionLink("Thêm vào giỏ hàng", "OrderNow", "ShoppingCart", new { Id = item.ProId }, null)
                                             </button>
@@ -59,7 +80,7 @@
                         }
                         <div class="recommended_items">
                             <!--recommended_items-->
-                          
+
                         </div>
                     </div>
                 </div>
@@ -68,7 +89,7 @@
         <!-- Bootstrap 5 JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!--End Carousel-->
-        
+
 
     </div>
 </body>
