@@ -53,7 +53,11 @@ namespace LapTrinhWeb.Libraries
             };
         }
 
-        public string GetIpAddress(HttpContext context)
+        public string GetIpAddress(HttpContextBase context)
+        {
+            return context.Request.UserHostAddress;
+        }
+        /*public string GetIpAddress(HttpContext context)
         {
             var ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
 
@@ -63,7 +67,7 @@ namespace LapTrinhWeb.Libraries
             }
 
             return string.IsNullOrEmpty(ipAddress) ? "127.0.0.1" : ipAddress;
-        }
+        }*/
 
 
         public void AddRequestData(string key, string value)

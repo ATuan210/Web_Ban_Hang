@@ -9,14 +9,14 @@ namespace LapTrinhWeb.Services.Vnpay
 {
     public class VnPayService : IVnPayService
     {
-        public string CreatePaymentUrl(PaymentInformationModel model, HttpContext context)
+        public string CreatePaymentUrl(PaymentInformationModel model, HttpContextBase context)
         {
             var timeZoneById = TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["TimeZoneId"]);
             var timeNow = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, timeZoneById);
             var tick = DateTime.Now.Ticks.ToString();
             var pay = new VnPayLibrary();
             var urlCallBack = ConfigurationManager.AppSettings["PaymentCallBack:ReturnUrl"];
-
+            pay.AddRequestData("vnp_ReturnUrl", urlCallBack);
             pay.AddRequestData("vnp_Version", ConfigurationManager.AppSettings["Vnpay:Version"]);
             pay.AddRequestData("vnp_Command", ConfigurationManager.AppSettings["Vnpay:Command"]);
             pay.AddRequestData("vnp_TmnCode", ConfigurationManager.AppSettings["Vnpay:TmnCode"]);

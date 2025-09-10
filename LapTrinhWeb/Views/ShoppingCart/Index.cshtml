@@ -1,4 +1,5 @@
 ﻿@using LapTrinhWeb.Models
+@model LapTrinhWeb.Models.Cart
 @{
     ViewBag.Title = "Shopping Cart";
 
@@ -13,7 +14,6 @@
         background-color: #ffcc99;
         color: #000;
         border-color: #000;
-        
     }
 </style>
 
@@ -78,21 +78,18 @@
                             <span id="errmsg" style="color: red"></span>
                         </td>
                         <td>
-                            @using (Html.BeginForm("CreatePaymentUrlVnpay", "Payment", FormMethod.Post))
+                            <!-- Form VNPAY tách riêng -->
+                            @using (Html.BeginForm("CreatePaymentUrlVnpay", "Payment", FormMethod.Post, new { id = "vnpayForm" }))
                             {
-                                <input type="hidden" name="Name"
-                                       value="@(User?.Identity != null && User.Identity.IsAuthenticated
-                        ? User.Identity.Name
-                        : "Guest")" />
+                                @Html.Hidden("Name", User?.Identity?.IsAuthenticated == true ? User.Identity.Name : "Guest")
+                                @Html.Hidden("Amount", total.HasValue ? total.Value.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture) : "0")
+                                @Html.Hidden("OrderDescription", "Thanh toán qua Vnpay tại NabiPetShop")
+                                @Html.Hidden("OrderType", "other")
 
-                                <input type="hidden" name="Amount"
-                                       value="@(Model != null ? Model.GrandTotal.ToString("0.##", System.Globalization.CultureInfo.InvariantCulture) : "0")" />
-
-                                <input type="hidden" name="OrderDescription" value="Thanh toán qua Vnpay tại NabiPetShop" />
-                                <input type="hidden" name="OrderType" value="other" />
-
-                                <button class="btn btn-success" type="submit">Thanh toán Vnpay</button>
+                                <button type="submit" class="btn btn-success">Thanh toán Vnpay</button>
                             }
+
+
                         </td>
 
                         <td style="font-weight: bolder; font-size: 20px;">@Html.ActionLink("Thanh toán", "CheckOut", "ShoppingCart", new { @style = "text-decoration: underline;" }) <i class="fa-solid fa-wallet" style="margin-left: 5px;"></i></td>
@@ -103,11 +100,12 @@
         else
         {
             <h4 style="margin-bottom : 133px; text-align:center; font-family: Arial; font-weight: bolder;">Không có sản phẩm trong giỏ hàng !!!</h4>
-            <img src="~/img/GioiThieu/giohangtrong.png" alt="ảnh giỏ hàng trống" style="width: 40%; margin-left: 450px;"/>
+            <img src="~/img/GioiThieu/giohangtrong.png" alt="ảnh giỏ hàng trống" style="width: 40%; margin-left: 450px;" />
         }
     }
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="path/to/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-3.7.1.min.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $(".quantity").keypress(function (e) {
@@ -117,6 +115,7 @@
                 }
             });
         });
+
     </script>
 </section>
 

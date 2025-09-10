@@ -22,13 +22,11 @@
         margin-top: 20px;
         margin-bottom: 30px;
         margin-left: 470px;
-        
     }
 
     .btn btn-sm btn-secondary {
         margin-right: 50px;
     }
-
 </style>
 
 <div style="text-align: center; margin: 20px auto; font-weight: bolder; width: 70%; align-content: center; font-size: 22px; border-radius: 10px; background-color: #ADADAD;">ADMIN PAGE / DELETE <i class="fa-solid fa-trash fa-beat"></i></div>
@@ -178,24 +176,9 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color" style="margin-left: 450px; margin-top: 20px;">
-                <!-- Nút quay về danh sách, giữ txtTimKiem -->
-                @{
-                    string txtTimKiem = Request["txtTimKiem"] ?? "";
-                }
-                <span style="margin-right: 105px;">
-                    @Html.ActionLink(
-                        "Quay về danh sách",
-                        "KetQuaTimKiem",       
-                        "TimKiem",            
-                        new { area = "Admin", txtTimKiem = txtTimKiem },  
-                        new { @class = "btn btn-sm btn-secondary" }  
-                    )
-                </span>
-
-                <!-- Nút Delete -->
+                <span style="margin-right: 105px;">@Html.ActionLink("Quay lại danh sách", "KetQuaTimKiem", null, new { @class = "btn btn-sm btn-secondary" })</span>
                 <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
             </div>
         }
-
     </div>
 </div>

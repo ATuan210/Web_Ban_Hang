@@ -98,6 +98,40 @@
 
 @Html.ActionLink("+ Tạo Sản Phẩm +", "Create", null, new { @class = "btn-create" })
 
+<!-- Hộp thoại tìm kiếm -->
+<div id="txtTimKiem" style="margin-bottom: 20px;">
+    <form action="@Url.Action("KetQuaTimKiem", "TimKiem", new { area="Admin" })"
+          method="post"
+          class="navbar-form navbar-right">
+        <div style="position: relative; width: 30%; margin-left:20px;">
+            <input type="text" name="txtTimKiem"
+                   class="form-control"
+                   placeholder="Tìm sản phẩm..."
+                   style="width: 100%; padding-right: 45px;
+                      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                                  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;" />
+
+            <button type="submit" class="btn btn-primary"
+                    style="position: absolute; top: 50%; right: 5px;
+                       transform: translateY(-50%); height: 30px; width: 35px;
+                       padding: 0; background-color: #000; border-color: #000;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form>
+
+
+
+    @*@using(Html.BeginForm("KetQuaTimKiem","TimKiem"))
+        {
+           @Html.TextBox("txtTimKiem","", htmlAttributes: new {@class = "TextBoxTimKiem", @placeholder = "Nhập từ khóa tìm kiếm"})
+           <!-- Chèn vào button tìm kiếm-->
+           <div id = "divHinhAnhTimKiem">
+               <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+           </div>
+        }*@
+</div>
+
 <table class="table" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; ">
     <thead>
         <tr style="text-align: center;">

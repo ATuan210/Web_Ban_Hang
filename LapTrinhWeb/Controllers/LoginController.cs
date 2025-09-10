@@ -64,7 +64,7 @@ namespace LapTrinhWeb.Controllers
                         return RedirectToAction("Index", "Products", new { area = "Admin" });
                     }
                 }
-                ModelState.AddModelError("", "Invalid Username or Password");
+                ModelState.AddModelError("", "Sai tài khoản hoặc mật khẩu !");
             }
             return View();
         }

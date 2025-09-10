@@ -6,7 +6,9 @@ namespace LapTrinhWeb.Services.Vnpay
 {
     public interface IVnPayService
     {
-        string CreatePaymentUrl(PaymentInformationModel model, HttpContext context);
+        string CreatePaymentUrl(PaymentInformationModel model, HttpContextBase context);
         PaymentResponseModel PaymentExecute(NameValueCollection collections);
     }
+
+
 }

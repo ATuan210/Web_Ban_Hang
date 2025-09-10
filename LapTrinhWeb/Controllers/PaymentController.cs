@@ -6,57 +6,66 @@ using System.Web;
 using System.Web.Mvc;
 using System.Configuration;
 
-
-public class PaymentController : Controller
+namespace LapTrinhWeb.Controllers
 {
-    private readonly IVnPayService _vnPayService;
-
-    public PaymentController(IVnPayService vnPayService)
+    public class PaymentController : Controller
     {
-        _vnPayService = vnPayService;
-    }
+        private readonly IVnPayService _vnPayService;
 
-    [HttpPost]
-    public ActionResult CreatePaymentUrlVnpay(PaymentInformationModel model)
-    {
-        var url = _vnPayService.CreatePaymentUrl(model, System.Web.HttpContext.Current);
-
-        if (string.IsNullOrEmpty(url))
+        public PaymentController(IVnPayService vnPayService)
         {
-            return Content("Không tạo được URL thanh toán VNPAY. Kiểm tra lại service.");
+            _vnPayService = vnPayService;
         }
 
-        return Redirect(url);
-
-
-        // HttpContext trong MVC5: System.Web.HttpContext.Current
-        //var url = _vnPayService.CreatePaymentUrl(model, System.Web.HttpContext.Current);
-
-        //return Redirect(url);
-        //return Content(url);
-    }
-
-    [HttpGet]
-    public ActionResult PaymentCallbackVnpay()
-    {
-        // Trong MVC5, QueryString lấy qua Request.QueryString
-        //var response = _vnPayService.PaymentExecute(Request.QueryString);
-
-        // Trả JSON trong MVC5 dùng JsonResult
-        //return Json(response, JsonRequestBehavior.AllowGet);
-
-        var response = _vnPayService.PaymentExecute(Request.QueryString);
-
-        if (response.Success)
+        [HttpPost]
+        public ActionResult CreatePaymentUrlVnpay(PaymentInformationModel model)
         {
-            return RedirectToAction("Success", "Checkout", new { orderId = response.OrderId });
+            if (model == null || model.Amount <= 0)
+            {
+                return RedirectToAction("Index", "ShoppingCart");
+            }
+
+            // Tạo URL sang VNPAY
+            var paymentUrl = _vnPayService.CreatePaymentUrl(model, this.HttpContext);
+
+            // Redirect sang cổng thanh toán
+            return Redirect(paymentUrl);
+
+
+            //var url = _vnPayService.CreatePaymentUrl(model, System.Web.HttpContext.Current);
+            //return Redirect(url); // chuyển sang trang VNPAY
+
+
+            // HttpContext trong MVC5: System.Web.HttpContext.Current
+            //var url = _vnPayService.CreatePaymentUrl(model, System.Web.HttpContext.Current);
+
+            //return Redirect(url);
+            //return Content(url);
         }
-        else
+
+        [HttpGet]
+        public ActionResult PaymentCallbackVnpay()
         {
-            return RedirectToAction("Fail", "Checkout");
+            // Trong MVC5, QueryString lấy qua Request.QueryString
+            //var response = _vnPayService.PaymentExecute(Request.QueryString);
+
+            // Trả JSON trong MVC5 dùng JsonResult
+            //return Json(response, JsonRequestBehavior.AllowGet);
+
+            var response = _vnPayService.PaymentExecute(Request.QueryString);
+
+            if (response.Success)
+            {
+                return RedirectToAction("Success", "Checkout", new { orderId = response.OrderId });
+            }
+            else
+            {
+                return RedirectToAction("Fail", "Checkout");
+            }
         }
+
+
+
     }
-
-    
-
 }
+

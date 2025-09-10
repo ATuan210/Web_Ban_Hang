@@ -1,0 +1,199 @@
+﻿@model LapTrinhWeb.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    string txtTimKiem = Request["txtTimKiem"] ?? "";
+    int page = Request["page"] != null ? int.Parse(Request["page"]) : 1;
+}
+
+<style>
+    .dl-horizontal {
+        margin-left: 40px;
+    }
+
+    .idea-details {
+        font-size: 20px;
+    }
+
+    .product_details {
+        font-size: 17px;
+    }
+
+    .button_details {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 450px;
+    }
+
+    .no-underline{
+        text-decoration: none;
+        font-weight: bolder;
+        color: #000;
+    }
+
+    .no-underline:hover {
+        font-weight: bolder;
+        color: #000;
+        text-decoration: underline;
+    }
+</style>
+<div style="text-align: center; margin: 20px auto; font-weight: bolder; width: 70%; align-content: center; font-size: 22px; border-radius: 10px; background-color: #ADADAD;">ADMIN PAGE / DETAILS <i class="fa-solid fa-circle-info fa-beat"></i></div>
+
+<div>
+    <h4 style="margin-top: 50px; text-align: center; font-weight: bolder;">Chi tiết sản phẩm :</h4>
+    <hr style="width : 60%; margin: 20px auto;" />
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Hình ảnh sản phẩm -->
+        <div class="col-md-6 text-center">
+            <img src="~/img/pet/@Model.ProImage" alt="@Model.ProName" class="img-thumbnail" style="max-width:90%; height:auto;" />
+        </div>
+
+        <!-- Thông tin sản phẩm -->
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProName)
+                </dt>
+
+                <dd class="product_details">
+                    @Html.DisplayFor(model => model.ProName)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProImage)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProImage)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProPrice)
+                </dt>
+
+                <dd>
+                    @String.Format("{0:N0} ₫", Model.ProPrice)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProBreed)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProBreed)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProColor)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProColor)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProAge)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProAge)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProGender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProGender)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProVaccination)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProVaccination)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProDeworming)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProDeworming)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProHealth)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProHealth)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.ProShipping)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ProShipping)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.Origin)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Origin)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+
+                <dt class="idea-details">
+                    @Html.DisplayNameFor(model => model.Category.CatName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Category.CatName)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+
+    <!-- Nút chức năng -->
+    <div style="margin-left: 450px;">
+        <i class="fa-solid fa-backward" style="margin-right: 5px;"></i>
+        @Html.ActionLink(
+        "Quay về danh sách",
+        "KetQuaTimKiem",
+        "TimKiem",
+        new { area = "Admin", txtTimKiem = txtTimKiem, page = page },
+        new { @class = "no-underline" }
+    )
+        <span style="margin-left: 80px;">@Html.ActionLink("Sửa sản phẩm", "Edit", new { id = Model.ProId }, new { @class = "btn btn-warning me-2" })</span>
+    </div>
+
+    
+</div>
