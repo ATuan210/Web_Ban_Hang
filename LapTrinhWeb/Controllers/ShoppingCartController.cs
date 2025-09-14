@@ -87,15 +87,23 @@ namespace DoAnLapTrinhWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateCart(FormCollection field)
+        public ActionResult UpdateCart(FormCollection field, string action)
         {
             string[] quantities = field.GetValues("quantity");
             List<Cart> ListCart = (List<Cart>)Session[strCart];
+
             for (int i = 0; i < ListCart.Count; i++)
             {
                 ListCart[i].Quantity = Convert.ToInt32(quantities[i]);
             }
             Session[strCart] = ListCart;
+
+            if (action == "Thanh toán")
+            {
+                return RedirectToAction("CheckOut");
+            }
+
+            // mặc định là cập nhật đơn hàng
             return RedirectToAction("Index");
         }
 

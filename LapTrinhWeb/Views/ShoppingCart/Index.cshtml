@@ -1,10 +1,13 @@
 ﻿@using LapTrinhWeb.Models
 @model LapTrinhWeb.Models.Cart
+
 @{
     ViewBag.Title = "Shopping Cart";
 
 
 }
+
+
 
 <style>
     .btn {
@@ -14,6 +17,14 @@
         background-color: #ffcc99;
         color: #000;
         border-color: #000;
+    }
+
+    /* Giữ border khi hover / focus */
+    .custom-btn:hover,
+    .custom-btn:focus {
+        border: 1px solid black; /* giữ nguyên khung */
+        background-color: #ffcc99; /* đổi nhẹ màu nền (tuỳ chọn) */
+        outline: none; /* bỏ viền xanh mặc định */
     }
 </style>
 
@@ -62,8 +73,8 @@
                             var total = temp.Sum(x => x.Quantity * x.Product.ProPrice);
                         }
                         <td colspan="2"></td>
-                        <td align="right" style="font-weight: 700; font-family: Arial;">Tổng Tiền: </td>
-                        <td colspan="2" style="font-family: Arial; font-size: 15px; font-weight: 700;">
+                        <td align="right" style="font-weight: 700; font-family: Arial; font-size: 17px;">Tổng Tiền: </td>
+                        <td colspan="2" style="font-family: Arial; font-size: 15px; font-weight: 700; font-size: 17px;">
                             @string.Format("{0:#,##0} ₫", total)
                         </td>
                     </tr>
@@ -74,7 +85,9 @@
                         </td>
                         <td style="font-weight: bolder; font-size: 18px;">@Html.ActionLink("Xóa tất cả", "ClearCart", "ShoppingCart", new { @style = "text-decoration: underline;" })</td>
                         <td style="font-size: 18px;">
-                            <input style="font-weight: bolder; border-radius: 8px; background-color: #ffcc99;" type="submit" value="Cập nhật đơn hàng" /><br />
+                            <input type="submit" name="action" value="Cập nhật đơn hàng"
+                                   style="font-weight: bolder; border-radius: 8px; background-color: #ffcc99;" />
+                            <br />
                             <span id="errmsg" style="color: red"></span>
                         </td>
                         <td>
@@ -92,7 +105,12 @@
 
                         </td>
 
-                        <td style="font-weight: bolder; font-size: 20px;">@Html.ActionLink("Thanh toán", "CheckOut", "ShoppingCart", new { @style = "text-decoration: underline;" }) <i class="fa-solid fa-wallet" style="margin-left: 5px;"></i></td>
+                        <td>
+                            <button type="submit" name="action" value="Thanh toán"
+                                    class="btn custom-btn">
+                                Thanh toán <i class="fa-solid fa-wallet" style="margin-left: 5px;"></i>
+                            </button>
+                        </td>
                     </tr>
                 </table>
             }

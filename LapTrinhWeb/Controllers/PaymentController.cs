@@ -32,16 +32,9 @@ namespace LapTrinhWeb.Controllers
             return Redirect(paymentUrl);
 
 
-            //var url = _vnPayService.CreatePaymentUrl(model, System.Web.HttpContext.Current);
-            //return Redirect(url); // chuyển sang trang VNPAY
-
-
-            // HttpContext trong MVC5: System.Web.HttpContext.Current
-            //var url = _vnPayService.CreatePaymentUrl(model, System.Web.HttpContext.Current);
-
-            //return Redirect(url);
-            //return Content(url);
         }
+        
+
 
         [HttpGet]
         public ActionResult PaymentCallbackVnpay()
